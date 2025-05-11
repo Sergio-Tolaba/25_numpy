@@ -1,0 +1,79 @@
+-resGitHub cli permite hacer todo desde la terminal (G:/Mi Unidad/ptable **/////Ver al final)
+>gh auth login
+luego da mensajes y hay que seleccionar con la flecha Ej -->GitHub.com
+-->HTTPS
+me dan un código: 0750-2291
+-->Browser(Enter) me pide el código, luego el login habitual Sergio-Tolaba Pichonazo22,
+1)py(local)
+>git init
+>git add . (git --all, git README.md)//Crear README=>echo #CRUD con node.j >> README.md)
+>git commit -m "Primer commit"
+NO(gh repo create mi-primer-repo --public --source=. --remote=origin --push)
+>gh repo create node1 --public (desde el cmd)
+(?gitignore y/N=No, ?add License=No, ? This will add an "origin" git remote to your local repository. Continue? Yes)
+✓ Created repository Sergio-Tolaba/node1 on GitHub
+✓ Added remote https://github.com/Sergio-Tolaba/node1.git
+(git branch -M main
+*>git config --global init.defaultBranch main) Ya se configuró git para que genere main en lugar de master
+
+git push -u origin main (se usa una sóla vez, luego es:>git push)
+
+2)py(remoto) >gh repo create mi-primer-repo (cmd)
+>git clone https://github.com/Sergio-Tolaba/node2.git
+>npm i (instala todas las dependencias que están en package.json)
+*Copy .env-example y renombroa .env (completo los datos Ej PORT=3000, etc)
+>npm run dev (ejecuto el proyecto node1=servidor web)
+
+
+
+
+GitHub New Repository
+or create a new repository on the command line
+	
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/Sergio-Tolaba/ver.git
+git push -u origin main
+…or push an existing repository from the command line
+git remote add origin https://github.com/Sergio-Tolaba/Data_Science.git
+git branch -M main
+git push -u origin main
+
+
+git remote add origin https://github.com/Sergio-Tolaba/ej_ds
+
+Desde mi rama:
+git switch main (git -v >= 2.23) o git viejo=> git chekout rama
+
+git branch => *main (hago el pull con el repo del profe Jean Paul Ferreira - Node.js Talento Tech 2025) Escritorio: Proyectos/node-curso
+               node-ser
+git switch node-ser
+
+git checkout feature-rama o git switch node-ser
+git fetch origin
+git merge origin/main
+
+
+
+****************************
+GitHub, crear carpeta desde + create file = c4/.gitkeep
+
+************************************************************
+/////////////////////////////////////////////////////////////
+G:\Mi unidad\ptable\gh_2.0.0_windows_amd64\bin>gh auth login
+? What account do you want to log into? GitHub.com
+? What is your preferred protocol for Git operations? HTTPS
+? Authenticate Git with your GitHub credentials? Yes
+? How would you like to authenticate GitHub CLI? Login with a web browser
+
+! First copy your one-time code: 0750-2291
+- Press Enter to open github.com in your browser...
+✓ Authentication complete. Press Enter to continue...
+gh auth status
+- gh config set -h github.com git_protocol https
+✓ Configured git protocol
+✓ Logged in as Sergio-Tolaba
+
+  

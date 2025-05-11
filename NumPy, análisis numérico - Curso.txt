@@ -1,0 +1,278 @@
+NumPy, análisis numérico - Curso
+01. Conociendo Numpy
+01
+Presentación
+En esta clase, el instructor Álvaro Camacho presenta el curso de NumPy, que se centra en el análisis numérico eficiente con Python. Se destaca la importancia de la biblioteca NumPy como el paquete fundamental para el análisis científico computacional en Python, ya que muchos módulos y bibliotecas en ciencia de datos se basan en ella.
+
+Durante el curso, se explorarán los arrays (arreglos), sus ventajas, los métodos que se pueden aplicar a ellos, operaciones entre arrays, y la generación de números aleatorios, así como la forma de garantizar su reproducibilidad. Además, se utilizará Google Colab para facilitar el acceso a los recursos sin necesidad de instalar software en la computadora. El objetivo es familiarizar a los estudiantes con NumPy y su utilidad en el trabajo de ciencia de datos. ¡Listos para comenzar!
+*************************************************
+02
+Conoce a Luri, nuestra IA
+02
+Preparando el ambiente
+ Siguiente pregunta
+
+En este curso utilizaremos Google Colab para escribir código en Python y llevar a cabo los experimentos. Para comenzar a utilizar esta herramienta, necesitas tener una cuenta en Google y acceder a este enlace, o si lo prefieres, puedes acceder directamente al notebook inicial.
+
+Además, para seguir el desarrollo del proyecto a lo largo del curso y reproducir todo lo que se ha hecho, puedes descargar el archivo con los datos. También hemos proporcionado la URL utilizada en la lección 1 para cargar los datos.
+************************************************
+02
+Preparando el ambiente
+ Siguiente pregunta
+
+En este curso utilizaremos Google Colab para escribir código en Python y llevar a cabo los experimentos. Para comenzar a utilizar esta herramienta, necesitas tener una cuenta en Google y acceder a este enlace, o si lo prefieres, puedes acceder directamente al notebook inicial.
+
+Además, para seguir el desarrollo del proyecto a lo largo del curso y reproducir todo lo que se ha hecho, puedes descargar el archivo con los datos. También hemos proporcionado la URL utilizada en la lección 1 para cargar los datos.
+***********************************************
+03 Desafío propuesto
+En esta clase, se introdujo el concepto de NumPy, una biblioteca fundamental para la computación científica en Python. Se explicó que los analistas de datos trabajan con datasets, que son conjuntos de datos, y en este caso, se analizará el precio de las manzanas en cinco ciudades rusas durante más de siete años.
+
+Se destacó que NumPy utiliza una estructura llamada Array, que almacena datos homogéneos y permite un acceso rápido y eficiente a la memoria. Las ventajas de trabajar con Arrays de NumPy incluyen la rapidez en las operaciones matemáticas y un uso de memoria más eficiente en comparación con las listas de Python.
+
+Además, se mencionó que NumPy permite realizar diversas operaciones matemáticas, estadísticas y de álgebra lineal, lo que lo convierte en una herramienta poderosa para el análisis de datos. Finalmente, se anticipó que en las próximas clases se comenzará a trabajar con un conjunto de datos en un notebook de Colab.
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+04
+Secuencia de valores
+ Siguiente pregunta
+
+En Ciencia de Datos, existen varias situaciones en las que necesitamos evaluar datos relacionados con eventos periódicos que ocurren en una fecha fija o predeterminada, ya que estos pueden tener alguna influencia en el fenómeno que queremos analizar. Un ejemplo de un evento que afecta a muchas personas de diversos países es la Copa del Mundo, organizada por la Federación Internacional de Fútbol (FIFA).
+
+Dado el ejemplo de un evento periódico anterior, crea un array utilizando la función np.arange() que liste todos los años en los que ocurrió o se prevé que ocurra la Copa del Mundo, considerando el intervalo cerrado desde el año 2000 hasta el 2102.
+
+Tip: La primera Copa del Mundo ocurrió en el año 2002.
+
+Alternativa correta
+import numpy as np
+
+ano_inicial = 2002
+ano_final = 2102
+np.arange(ano_inicial, ano_final, 4)
+
+Alternativa correta
+import numpy as np
+
+ano_inicial = 2002
+ano_final = 2102
+np.arange(ano_inicial, ano_final + 1, 4)
+
+Este algoritmo muestra todos los años en el intervalo cerrado de 2000 a 2102 en los que ocurre la Copa del Mundo.
+
+Alternativa correta
+import numpy as np
+
+ano_inicial = 2000
+ano_final = 2102
+np.arange(ano_inicial, ano_final, 4)
+
+Alternativa correta
+import numpy
+
+ano_inicial = 2002
+ano_final = 2102
+np.arange(ano_inicial, ano_final + 1, 4)
+
+¡Enhorabuena, has acertado!
+ Discutir en el Fo
+*************************************************************************************
+05 Cargando los datos
+Nuevo notebook en google colab y lo renombro como Numpy	(cada celda la represento con un *)
+*
+import numpy as np
+1) A partir de la url que está en GitHub
+*
+url='https://gist.githubusercontent.com/ahcamachod/41b8a65c5e5b58125401deafb68af460/raw/f84320f69efa1cc3e86e1db054422cfa4869c63e/manzanas.csv'
+*
+np.loadtxt(url, delimiter=',',usecols=np.arange(1,88,1)) 
+
+2)Descargamos manzanas.cvs a google drive. Conectamos colab al nuestro drive y buscamos la carpeta Colab Notebooks(1)/Numpy y copiamos la ruta y la guardamos en la variable path
+*
+from google.colab import drive
+drive.mount('/content/drive')
+*
+path='/content/drive/MyDrive/Colab Notebooks (1)/Numpy/manzanas.csv'
+*
+np.loadtxt(path, delimiter=',',usecols=np.arange(1,88,1)) 
+
+Resumen:
+En esta clase, se introdujo el uso de NumPy para el análisis numérico en Python, centrándose en un conjunto de datos sobre el precio de manzanas en cinco ciudades rusas entre 2013 y 2020. Se explicó cómo cargar este conjunto de datos, apples-ts.csv, en un notebook de Google Colab.
+
+Se presentaron dos métodos para cargar el archivo:
+
+Usando un enlace de gist: Se mostró cómo importar NumPy y utilizar el método loadtxt, especificando el delimitador (coma) y las columnas a utilizar. Se abordó un error común relacionado con espacios vacíos en el archivo y cómo solucionarlo utilizando np.arange para definir el rango de columnas a cargar.
+
+Conectando Google Drive: Se explicó cómo montar Google Drive en Google Colab, copiar la ruta del archivo y cargarlo de manera similar al primer método.
+
+Se destacó la importancia de almacenar los datos en una variable para su análisis posterior. La clase concluyó con la expectativa de comenzar a trabajar con los datos en la próxima sesión.
+********************************************************
+ 06 Para saber más: ventajas de los arrays
+ Siguiente pregunta
+
+Las listas en Python son estructuras de datos básicas que pueden contener elementos de diferentes tipos (enteros, cadenas, otras listas, etc.). Por otro lado, Numpy (Numerical Python) es una biblioteca de Python que proporciona soporte para matrices multidimensionales, estructuras de datos más avanzadas y eficientes para cálculos numéricos.
+
+Aquí tienes un ejemplo de cómo convertir una lista en un array Numpy:
+
+import numpy as np
+
+# crea una lista
+lista = [1, 2, 3, 4, 5]
+
+# convierte la lista en un array Numpy
+array = np.array(lista)
+
+print("Lista: ", lista)
+print("Array: ", array)
+Copia el código
+Salida:
+
+Lista: [1, 2, 3, 4, 5]
+
+Array: [1 2 3 4 5]
+Copia el código
+Existen varias ventajas en el uso de arrays Numpy en lugar de listas regulares de Python y aquí tienes algunas de ellas:
+
+1. Eficiencia de procesamiento: Las operaciones matemáticas en los arrays Numpy son mucho más rápidas que en las listas regulares, ya que Numpy está optimizado para trabajar con conjuntos de datos homogéneos y libera memoria de la computadora de manera rápida.
+
+2. Facilidad de uso: Las operaciones matemáticas en los arrays Numpy se expresan de manera mucho más clara y concisa que en las listas regulares, lo que hace que el código sea más fácil de leer y mantener.
+
+3. Integración con otras bibliotecas: Numpy es una de las bibliotecas más utilizadas en ciencia de datos y aprendizaje automático. Muchas otras bibliotecas, como Pandas y Matplotlib, están diseñadas para trabajar directamente con arrays Numpy.
+
+Comparación de rendimiento: listas vs arrays
+
+Centrándonos en la eficiencia, podemos comparar el tiempo necesario para realizar un cálculo utilizando listas y arrays.
+
+import numpy as np
+import time
+
+# crea una lista con 1000000 elementos
+lista = list(range(1000000))
+
+# convierte la lista en un array Numpy
+array = np.array(lista)
+
+# comienza a medir el tiempo para la operación con la lista
+start_time = time.time()
+
+# realiza la operación de elevar al cuadrado cada elemento de la lista
+lista_cuadrado = [i**2 for i in lista]
+
+# detiene el cronómetro
+tiempo_lista = time.time() - start_time
+
+# comienza a medir el tiempo para la operación con el array
+start_time = time.time()
+
+# realiza la operación de elevar al cuadrado cada elemento del array
+array_cuadrado = array**2
+
+# detiene el cronómetro
+tiempo_array = time.time() - start_time
+
+print("Tiempo de la operación con la lista: ", tiempo_lista)
+print("Tiempo de la operación con el array: ", tiempo_array)
+Copia el código
+Salida:
+
+Tiempo de la operación con la lista: 0.2745847702026367
+
+Tiempo de la operación con el array: 0.004081010818481445
+Copia el código
+Como se puede ver, la operación realizada con el array Numpy fue mucho más rápida que con la lista regular, lo que demuestra la eficiencia en el procesamiento con el array.
+
+ Discutir en el Foro
+************************************************************************************
+07 Dimensiones de los arrays
+*
+datos.ndim #2 porquee tengo dos dimensiones: meses (x) vs los precios (y)#2
+*
+datos.shape # forma del tipo 6 filas y 87 columnas #(6, 87)
+*
+datos_transpuestos = datos.T
+datos_transpuestos # array([[ 1.2003,  79.72, 42.67, 62.55, 48.26, 71.25],
+
+En esta clase, se introdujo el uso de la biblioteca NumPy en Python, comenzando con la preparación del entorno en un cuaderno de Colab. Se explicó qué es NumPy y se proporcionó un enlace a su documentación para que los estudiantes puedan explorarla.
+
+Se cargó un conjunto de datos llamado manzanas.csv desde Google Drive y se almacenó en una variable llamada Datos. Se mostró cómo determinar la cantidad de dimensiones del array utilizando el método nDim, que en este caso resultó ser 2, y cómo obtener la forma del array con Datos.shape, que mostró que había 6 filas y 87 columnas.
+
+Además, se discutió la dificultad de visualizar los datos en su forma original y se presentó el método Transpose para facilitar la visualización, convirtiendo filas en columnas y viceversa. Finalmente, se almacenó la información transpuesta en una nueva variable llamada datos_transpuestos, preparándose para experimentar más con NumPy en la próxima clase.
+///////////////////////////////////////////////////////////////////
+08 Obteniendo las dimensiones
+ Siguiente pregunta
+
+Un colega te pidió que cargues una base de datos y verifiques el número de filas y columnas del archivo cargado. Tenía dudas sobre si se habían cargado todas las filas.
+
+¿Cómo determinar las dimensiones correctas de una matriz?
+
+Para responder a esta pregunta, necesitarás acceder al siguiente dataset. Puedes usar la opción skiprows=1 para omitir la primera línea del archivo.
+
+Alternativa correta
+url = 'https://raw.githubusercontent.com/allanspadini/numpy/dados/bytebank.csv'
+import numpy as np
+dato = np.loadtxt(url, delimiter=',', skiprows=1, dtype=float)
+np.shape(dato)
+
+NumPy también tiene la función shape() y podemos aplicarla a una matriz para obtener sus dimensiones.
+
+Alternativa correta
+url = 'https://raw.githubusercontent.com/allanspadini/numpy/dados/bytebank.csv'
+import numpy as np
+dato = np.loadtxt(url, delimiter=',', skiprows=1, dtype=float)
+dato.shape
+
+El atributo shape se puede consultar a una matriz para obtener sus dimensiones.
+
+Alternativa correta
+url = 'https://raw.githubusercontent.com/allanspadini/numpy/dados/bytebank.csv'
+import numpy as np
+dato = np.loadtxt(url, delimiter=',', skiprows=1, dtype=float)
+dato.ndim
+
+Alternativa correta
+url = 'https://raw.githubusercontent.com/allanspadini/numpy/dados/bytebank.csv'
+import numpy as np
+dato = np.loadtxt(url, delimiter=',', skiprows=[1,2], dtype=float)
+np.shape(dato)
+
+¡Enhorabuena, has acertado!
+ Discutir en el Foro
+ Siguiente preg
+**********************************************************************************+
+09 Haga lo que hicimos
+ Siguiente pregunta
+
+Ha llegado el momento de poner a prueba los conocimientos adquiridos durante la lección. Para ello, vamos a utilizar otro conjunto de datos en un desafío que se desarrollará a lo largo del curso. Este conjunto de datos es una versión modificada del archivo disponible en el sitio de Kaggle. Por lo tanto, utilizaremos el archivo raw disponible en Github.
+
+En esta etapa, debes cargar los datos. Para hacerlo, importa NumPy y utiliza la función loadtxt. Utiliza el enlace de la URL y el parámetro usecols para omitir la primera columna. Puedes usar np.arange para crear la secuencia de números que representan las columnas. Por último, también es necesario incluir el parámetro skiprows=1 para que la primera línea de texto se omita al leer el archivo.
+
+Ver opinión del instructor
+Opinión del instructor
+
+Para llevar a cabo esta etapa, puedes seguir los siguientes pasos:
+
+import numpy as np
+url = 'https://gist.githubusercontent.com/ahcamachod/9be09de793dc3bf1e6c3d98eb4e5b1ef/raw/21b85572693200040e11284ef6dcfc3457ec8e11/citrus.csv'
+datos = np.loadtxt(url, delimiter=',', usecols=np.arange(1, 6, 1), skiprows=1)
+
+******************************************************************************************
+10 Lo que aprendimos
+ Siguiente pregunta
+
+Lo que aprendimos en esta aula:
+
+Crear arrays con secuencias numéricas.
+Cargar archivos.
+Verificar las dimensiones de un array.
+Realizar la transposición de un array.
+********************************************************************
+***************************************************************+
+02.Exploración de datos
+01
+Proyecto del aula anterior
+ Siguiente pregunta
+
+¿Comenzando en esta etapa? Aquí puedes descargar los archivos del proyecto que hemos avanzado hasta el aula anterior.
+
+Descargue los archivos en GitHub
+
+~ https://github.com/alura-es-cursos/2044-numpy-analisis-numerico-eficiente-con-python/tree/aula-2
+
+*************************************************+

@@ -509,3 +509,317 @@ Imagen con tres tablas de una tabla de dos columnas, ID y VALOR. Desde la primer
 04
 Regresión lineal
 
+En esta clase, se abordó el tema de la regresión lineal utilizando la biblioteca NumPy en Python. Se explicó cómo calcular la pendiente (alfa) y la intersección (beta) de una línea que representa un conjunto de datos, en este caso, los precios de los kilos de manzana en Moscú.
+
+Se presentó la fórmula para calcular la pendiente, que involucra el número de observaciones y sumatorias de productos entre las fechas y los precios. También se discutió cómo calcular la intersección utilizando el promedio de los precios y las fechas.
+
+Se enfatizó la importancia de utilizar NumPy para realizar estos cálculos de manera eficiente y elegante, evitando el método de prueba y error. Finalmente, se mostró cómo obtener el valor de Y a partir de la ecuación de la recta y se mencionó la posibilidad de graficar los resultados para visualizar la relación entre los datos.
+
+La clase concluyó con la invitación a seguir explorando las capacidades de NumPy para la computación científica.
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+05
+Implementando una ecuación
+ Siguiente pregunta
+
+Tatiana quería dibujar un círculo con la ayuda de la computadora. Para dibujar la parte superior del círculo, sabía que debía usar la ecuación:
+
+y = sqrt(1 - x ^ 2)
+Copia el código
+Y para la parte inferior, solo tenía que usar la misma ecuación multiplicada por -1.
+
+¿Cuál secuencia de código debe usar para construir el gráfico correctamente usando NumPy y sabiendo que ambas partes del círculo deben tener el mismo color?
+
+Alternativa correta
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Generar una secuencia de valores de x de -1 a 1
+x = np.arange(-1, 1, 0.0001)
+
+# Implementación de la fórmula
+y1 = np.sqrt(1 - x**2)
+y2 = -np.sqrt(1 - x**2)
+
+# Graficar el gráfico con las dos partes del círculo
+plt.plot(x, y1, 'r')
+plt.plot(x, y2, 'r' )
+
+# Agregar el título del gráfico y las etiquetas de los ejes x e y
+plt.title("Círculo")
+plt.xlabel("Eje x")
+plt.ylabel("Eje y")
+
+# Mostrar el gráfico
+plt.show()
+
+Ella implementó la ecuación para la parte superior e inferior del círculo y generó un gráfico para ambas partes con el mismo color.
+
+Alternativa correta
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Generar una secuencia de valores de x de -1 a 1
+x = np.arange(-1, 1, 0.0001)
+
+# Implementación de la fórmula
+y = np.sqrt(1 - x**2) - np.sqrt(1 - x**2)
+
+# Graficar el gráfico con las dos partes del círculo
+plt.plot(x, y, 'r')
+
+# Agregar el título del gráfico y las etiquetas de los ejes x e y
+plt.title("Círculo")
+plt.xlabel("Eje x")
+plt.ylabel("Eje y")
+
+# Mostrar el gráfico
+plt.show()
+
+Si intentas ejecutar este código, verás que obtenemos una secuencia de ceros para los valores de y.
+
+Alternativa correta
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Generar una secuencia de valores de x de -1 a 1
+x = np.arange(-1, 1, 0.0001)
+
+# Implementación de la fórmula
+y1 = np.power(1 - x, 2)
+y2 = -np.power(1 - x, 2)
+
+# Graficar el gráfico con las dos partes del círculo
+plt.plot(x, y1, 'r')
+plt.plot(x, y2, 'r' )
+
+# Agregar el título del gráfico y las etiquetas de los ejes x e y
+plt.title("Círculo")
+plt.xlabel("Eje x")
+plt.ylabel("Eje y")
+
+# Mostrar el gráfico
+plt.show()
+
+Observa que aquí en lugar de sacar la raíz cuadrada, elevó los elementos de la matriz al cuadrado.
+
+¡Enhorabuena, has acertado!
+ Discutir en el Foro
+ Siguiente p
+*******************************************************************************************
+ 06 Aplicación de la regresión
+En esta clase, se abordó el uso de la biblioteca NumPy para realizar análisis numérico, específicamente en la aplicación de la regresión lineal. Se explicó cómo establecer la línea que mejor describe un conjunto de datos utilizando una ecuación de primer grado, que relaciona la variable dependiente (y) con la variable independiente (x) a través de la pendiente y el coeficiente de intersección.
+
+Se mostró cómo calcular el precio de un producto, como las manzanas, en un momento específico, utilizando la ecuación de la línea. Por ejemplo, se calculó el precio en enero de 2015, que corresponde al mes 25, y se estimó que el precio sería de 90.52. También se realizó un cálculo para el mes 75, obteniendo un precio estimado de 112.
+
+Se mencionó que, aunque la regresión lineal es útil, existen otras ecuaciones de grados superiores que podrían ajustarse mejor a los datos, aunque esto puede llevar al problema del sobreajuste (overfitting). Finalmente, se anticipó que en la próxima clase se explorarán recursos de NumPy para trabajar con números aleatorios, lo que permitirá encontrar la mejor línea sin necesidad de experimentar manualmente con los números.
+***************************************************************
+07
+Para saber más: regresión
+ Siguiente pregunta
+
+La regresión es ampliamente utilizada en ciencia de datos para la predicción y también para la interpolación de valores. Su uso tiene varios aspectos y hemos seleccionado algunos cursos de Alura Latam que puedes tomar para profundizar en el tema.
+
+Regresión Lineal: Análisis de correlaciones y previsión de resultados
+Regresión Lineal: Técnicas Avanzadas de Modelado
+Data Analysis: previsiones con Google Sheets
+Regresión: Implementa una red neuronal con numpy
+Son 4 links a cursos en Alura a los cuales no tengo acceso, hay que pagar
+**************************************************************************
+08
+Haga lo que hicimos
+ Siguiente pregunta
+
+Ha llegado el momento de poner a prueba los conocimientos adquiridos durante la lección. Continuando con el proyecto de las naranjas/toronjas, ahora debes calcular el coeficiente angular y lineal para la recta de las naranjas y para la recta de las toronjas. Utiliza la fórmula de mínimos cuadrados para encontrar cada uno.
+
+Ver opinión del instructor
+Opinión del instructor
+
+Para llevar a cabo esta etapa, puedes seguir los siguientes pasos:
+
+Coeficientes para las naranjas:
+
+Y = peso_naranja
+X = diametro_naranja
+n = np.size(X)
+
+a = (n*np.sum(X*Y) - np.sum(X)*np.sum(Y))/(n*np.sum(X**2)-np.sum(X)**2)
+b = np.mean(Y) - a*np.mean(X)
+Copia el código
+Para las toronjas, simplemente reemplaza "naranja" por "toronja" en el nombre de las variables
+**********************************************************
+09
+Lo que aprendimos
+ Siguiente pregunta
+
+Lo que aprendimos en esta aula:
+
+Realizar operaciones entre arrays.
+Calcular la norma entre dos arrays.
+Implementar la regresión lineal.
+*****************************************************************
+****************************************************************+
+04.Números aleatorios
+01
+Proyecto del aula anterior
+¿Comenzando en esta etapa? Aquí puedes descargar los archivos del proyecto que hemos avanzado hasta el aula anterior.
+
+Descargue los archivos en Github
+
+~ https://github.com/alura-es-cursos/2044-numpy-analisis-numerico-eficiente-con-python/tree/aula-4
+*****************************************************************
+02
+Generando números aleatorios
+En esta clase, aprendimos sobre la generación de números aleatorios utilizando NumPy, lo cual es fundamental en la computación científica para realizar experimentos y pruebas. Se explicó cómo generar números aleatorios enteros con la función np.random.randint y números aleatorios de tipo float con np.random.uniform, especificando un rango inferior y superior, así como la cantidad de números deseados.
+
+Se destacó la importancia de los números aleatorios en la estimación de valores, como las pendientes en un modelo, permitiendo realizar múltiples iteraciones sin necesidad de ingresar manualmente cada valor. Además, se mostró cómo calcular la norma utilizando np.linalg.norm, que ayuda a evaluar la precisión de las predicciones.
+
+Finalmente, se mencionó que al generar números aleatorios, los resultados pueden variar en cada ejecución, a menos que se establezca un estado de aleatoriedad específico. Esto es crucial para entender cómo funcionan los números aleatorios en la práctica.
+*****************************************************************
+03
+Reproductibilidad
+En esta clase, se abordó el concepto de números aleatorios en NumPy y la importancia de la reproducibilidad en la generación de estos números. Se explicó que, aunque los números generados parecen aleatorios, en realidad son pseudoaleatorios, ya que dependen de un algoritmo y de una semilla (o random seed).
+
+Se destacó que al establecer una semilla con np.random.seed, se puede garantizar que los números generados sean los mismos en cada ejecución, lo cual es crucial para realizar experimentos y análisis consistentes. Se mostró cómo, al ejecutar el mismo código en la misma celda después de establecer la semilla, los resultados permanecen constantes.
+
+Finalmente, se mencionó que, aunque ya sabemos cómo crear Arrays, en la próxima clase se explorará cómo unir varios Arrays para crear estructuras similares a tablas, lo que facilitará la exportación y el uso en futuros experimentos.
+///////////////////////////////////////////////////////////////////////////////////
+04
+Los mismos valores
+ Siguiente pregunta
+
+Micaela quería generar dos secuencias de números aleatorios diferentes entre 0 y 5 en su código. Supongamos que ella escribió lo siguiente:
+
+import numpy as np
+
+np.random.seed(42)
+a = np.random.uniform(0, 1, 5)
+np.random.seed(42)
+b = np.random.uniform(0, 1, 5)
+Copia el código
+¿Qué problemas está experimentando con este código?
+
+Alternativa correta
+La secuencia de código generará 5 números entre 0 y 1. A pesar de ello, seed(42) hará que las dos secuencias sean diferentes y reproducibles.
+
+
+Alternativa correta
+La secuencia de código generará solo un número entre cero y 5. Además, seed(42) hará que ambas secuencias sean iguales.
+
+
+Alternativa correta
+La secuencia de código generará 5 números entre 0 y 1. Además, seed(42) hará que ambas secuencias sean iguales.
+
+
+La elección del primer valor dentro de random.uniform es el primer valor posible en la secuencia, el segundo valor es el último valor posible y el último valor es el número de valores en la secuencia. Además, colocar random.seed con el mismo número justo antes de la llamada a la función hará que se genere la misma secuencia. Un ejemplo de código que resolvería el problema correctamente es este, observe que se generarán secuencias de 5 números:
+
+import numpy as np
+
+np.random.seed(42)
+a = np.random.uniform(0, 5, 5)
+np.random.seed(8)
+b = np.random.uniform(0, 5, 5)
+Copia el código
+¡Enhorabuena, has acertado!
+ Discutir en el Foro
+ Siguiente pregunta
+****************************************************************************
+05
+Exportación
+En esta clase, aprendimos sobre la exportación de datos utilizando la biblioteca NumPy en Python. Comenzamos generando números aleatorios y trabajando con NumPy Arrays, específicamente con dos arreglos llamados pendientes y normas.
+
+Vimos cómo combinar estos arreglos en una nueva variable llamada datos utilizando la función column_stack, que nos permite apilar columnas. Al verificar la forma de datos, observamos que tiene 100 filas y 2 columnas.
+
+Luego, aprendimos a almacenar estos datos en un archivo CSV en nuestra cuenta de Drive. Utilizamos la función np.save.txt para guardar los datos, especificando la ruta del archivo y el delimitador (en este caso, comas). Finalmente, revisamos cómo acceder y visualizar el archivo guardado en Drive.
+
+La clase subrayó la importancia de experimentar con NumPy y explorar sus diversas funcionalidades para fortalecer nuestras habilidades en ciencia de datos.
+///////////////////////////////////////////////////////////////
+06
+Aplicando a Numpy
+ Siguiente pregunta
+
+Has comenzado tus estudios con la biblioteca Numpy y decidiste usarla para reemplazar un cálculo que se realizaba con listas de Python. La lista que tienes en tus manos es la siguiente:
+
+x = [0,1,2,3,4,5,6,7,8,9,10]
+Copia el código
+Esta lista se estaba utilizando para calcular varios valores de "y" en la ecuación y = x + 3 / 2. ¿Cómo se vería el código en Numpy para reemplazar el siguiente fragmento de código?
+
+x = [0,1,2,3,4,5,6,7,8,9,10]
+y = []
+
+for i in x:
+  y.append(i + 3 / 2)
+Copia el código
+Tip: Ejecuta el código anterior antes y verifique los valores en las variables x e y con la función print() para comparar los resultados del array.
+
+Alternativa correta
+import numpy as np
+x = [0,1,2,3,4,5,6,7,8,9,10]
+x = np.array(x)
+
+for i in x:
+  y = i + 3 / 2
+
+Este código calcula el valor de la ecuación Y para cada valor de X, pero solo se almacena el último valor, ya que el bucle for sobrescribe la variable y. Con Numpy, podemos crear el array con todos los valores, además de resumir el código y hacerlo más limpio.
+
+Alternativa correta
+import numpy
+x = [0,1,2,3,4,5,6,7,8,9,10]
+x = array(x)
+y = x + 3 / 2
+
+Alternativa correta
+import numpy as np
+x = [0,1,2,3,4,5,6,7,8,9,10]
+x = np.array(x)
+y = x + 3 / 2
+
+Primero debemos importar la biblioteca y convertir la lista en un array. Luego podemos realizar el cálculo de manera normal. Esto nos dará un array con valores equivalentes al resultado con la lista de Python.
+**********************************************************************
+07
+Haga lo que hicimos
+ Siguiente pregunta
+
+Ha llegado el momento de poner a prueba los conocimientos adquiridos durante la lección. Continuando con el proyecto de las naranjas/toronjas, ahora debes calcular el coeficiente angular utilizando la generación de números aleatorios. Supongamos que ya conoces el valor de b y que este es igual a 17.
+
+Ver opinión del instructor
+Opinión del instructor
+
+Para llevar a cabo esta etapa, puedes seguir los siguientes pasos:
+
+norma = np.array([])
+np.random.seed(84)
+coeficientes_angulares = np.random.uniform(low=0.0, high=30.0, size=100)
+
+for i in range(100):
+  norma = np.append(norma, np.linalg.norm(Y - (coeficientes_angulares[i]*X + b)))
+Copia el código
+En este código, se genera una serie de coeficientes angulares aleatorios y se calcula la norma de la diferencia entre Y y el valor calculado para cada coeficiente angular. Estos valores se almacenan en el array norma.
+
+ Discutir en el Foro
+*********************************************************************************+
+08
+Proyecto Final
+ Siguiente pregunta
+
+Aquí puedes descargar los archivos del proyecto completo.
+
+Descargue los archivos en GitHub
+****************************************************************
+09
+Lo que aprendimos
+ Siguiente pregunta
+
+Lo que aprendimos en esta aula:
+
+Generar secuencias de números aleatorios.
+Garantizar la reproducibilidad de resultados.
+Agrupar arrays.
+Guardar archivos.
+**************************************************
+10
+Conclusión
+En esta clase sobre NumPy, hemos explorado la importancia de esta biblioteca para la computación científica en Python. Aprendimos qué es un array (matriz) y las ventajas de trabajar con ellos, así como las diversas operaciones matemáticas que se pueden realizar. Se presentó un caso práctico donde trazamos una línea recta para prever el comportamiento del precio de las manzanas en ciudades rusas.
+
+Además, discutimos la utilidad de generar números aleatorios y la posibilidad de reproducirlos para experimentos futuros, así como la exportación de archivos con los datos resultantes. Finalmente, se enfatizó la importancia de seguir practicando y explorando más funciones de NumPy, así como su integración con otras bibliotecas como Matplotlib, Pandas y SciPy. ¡Espero que hayas disfrutado del entrenamiento y sigas experimentando!
+****************************************************************
